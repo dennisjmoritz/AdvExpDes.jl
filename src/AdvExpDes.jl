@@ -1,4 +1,11 @@
 using ExperimentalDesign
+using LinearAlgebra
+using Statistics
+using StatsModels
+using DataFrames
+using StatsBase
+using IterTools
+
 module AdvExpDes
 function generate_glp_set(n::Int, s::Int, h::Vector{Int})
     """
@@ -30,8 +37,7 @@ function generate_glp_set(n::Int, s::Int, h::Vector{Int})
 end
 
 
-using StatsBase  # For gcd
-using IterTools
+
 
 # Function to calculate discrepancy (simple placeholder, replace with actual metric)
 function calculate_discrepancy(design::Matrix{Float64})
@@ -84,10 +90,7 @@ println("Best Design:")
 best_design
 
 
-using LinearAlgebra
-using Statistics
-using StatsModels
-using DataFrames
+
 
 # Move to helper functions?
 # Can be improved?
@@ -270,16 +273,11 @@ function calc_optim_i(model_matrix, potent_vals_mm)
 end
 calc_optim_i(model_matrix, potent_vals_mm)
 
-using LinearAlgebra
-using Statistics
-using StatsModels
-using DataFrames
 
-## To Do:
-# Verify functions are correct
-# Revise overall function
-# Clean up scratch work
-# Write test function(s)?
+
+
+# TODO: Verify optimality functions are correct
+# TODO: Write/Move test functioms for optimality
 
 # Test Values
 C = [ 0 0 1;
@@ -487,5 +485,13 @@ end
 
 calc_effs(design6_1_modmat, C)
 
+
+function expand_design(design_matrix, add_n, model, criterion)
+    
+end
+
+function gen_opt_design(n, dims, model, criterion)
+    
+end
 
 end # module AdvExpDes
